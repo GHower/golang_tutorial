@@ -1,0 +1,9 @@
+[list]
+    [list.postgres]
+        driver_name = "postgres"
+        data_source_name = "host=localhost user=postgres password=root dbname=test port=5432 sslmode=disable TimeZone=Asia/Shanghai"
+#        data_source_name = "postgres://postgres:root@localhost/test?sslmode=disable&TimeZone=Asia/Shanghai"
+        max_open_conn = 24
+        max_idle_conn = 10
+        max_conn_life_time=100
+        listen_addresses="*"

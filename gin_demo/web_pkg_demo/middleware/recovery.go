@@ -3,14 +3,14 @@ package middleware
 import (
 	"errors"
 	"fmt"
-	"gin_demo/gin_scaffold/public"
 	"gin_demo/web_pkg_demo/lib"
+	"gin_demo/web_pkg_demo/public"
 
 	"github.com/gin-gonic/gin"
 	"runtime/debug"
 )
 
-// RecoveryMiddleware捕获所有panic，并且返回错误信息
+// RecoveryMiddleware 捕获所有panic，并且返回错误信息
 func RecoveryMiddleware() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		defer func() {
@@ -30,6 +30,7 @@ func RecoveryMiddleware() gin.HandlerFunc {
 					return
 				}
 			}
+
 		}()
 		//fmt.Printf("当前是: RecoveryMiddleware\t")
 		c.Next()

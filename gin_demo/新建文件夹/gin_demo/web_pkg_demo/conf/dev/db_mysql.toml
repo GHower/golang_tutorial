@@ -1,7 +1,0 @@
-[list]
-    [list.mysql]
-        driver_name = "mysql"
-        data_source_name = "root:root@tcp(127.0.0.1:3306)/test?charset=utf8&parseTime=true&loc=Asia%2FChongqing"
-        max_open_conn = 24
-        max_idle_conn = 10
-        max_conn_life_time=100

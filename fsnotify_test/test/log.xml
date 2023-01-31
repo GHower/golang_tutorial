@@ -1,0 +1,14 @@
+<seelog minlevel="trace">
+    <outputs formatid="main">
+        <console/>
+        <filter levels="info,warn,error">
+            <rollingfile type="size" filename="fsnotify_test/test/server.log" maxsize="10240" maxrolls="1000" />
+        </filter>
+    </outputs>
+
+    <formats>
+        <format id="main" format="[%Date %Time][%LEVEL] %Msg%n"/>
+        <format id="main" format="[%Date %Time][%LEVEL][%TraceId] %CodePath:%Line %Msg%n"/>
+    </formats>
+</seelog>
+

@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"github.com/gin-gonic/gin"
 	"io"
 	"os"
@@ -15,19 +14,20 @@ func main() {
 	// 着色
 	gin.ForceConsoleColor()
 
-	router.Use(gin.LoggerWithFormatter(func(param gin.LogFormatterParams) string {
-		return fmt.Sprintf("%s - %s \"%s %s %s %d %s \"%s\" %s\"\n",
-			param.TimeStamp.Format("2006-01-02 03:04:05"),
-			param.ClientIP,
-			param.Method,
-			param.Path,
-			param.Request.Proto,
-			param.StatusCode,
-			param.Latency,
-			param.Request.UserAgent(),
-			param.ErrorMessage,
-		)
-	}))
+	//router.Use(gin.LoggerWithFormatter(func(param gin.LogFormatterParams) string {
+	//	return fmt.Sprintf("\033[97;41m%s[41m - %s \"%s %s %s %d %s \"%s\" %s\"\n",
+	//		param.TimeStamp.Format("2006-01-02 03:04:05"),
+	//		param.ClientIP,
+	//		param.Method,
+	//		param.Path,
+	//		param.Request.Proto,
+	//		param.StatusCode,
+	//		param.Latency,
+	//		param.Request.UserAgent(),
+	//		param.ErrorMessage,
+	//	)
+	//}))
+	router.Use(gin.Logger())
 	router.Use(gin.Recovery())
 
 	router.GET("/index", func(c *gin.Context) {

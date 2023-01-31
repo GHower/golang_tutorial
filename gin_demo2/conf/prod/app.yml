@@ -1,0 +1,28 @@
+base:
+  debug_mode: "debug"
+  time_zone: "Asia/Shanghai"
+  # 慢接口阈值时间设置(单位:秒)，建议超过2s为慢接口
+  api_slow_time:  2
+
+# 单链接数据库
+db:
+  driver_name: "mysql"
+  source_url: ""
+  max_open_conn : 24
+  max_idle_conn: 10
+  max_conn_life_time: 100
+
+log:
+  log_level: "trace"
+  # 输出相关配置
+  output:
+    file:
+      on: true
+      path: "./logs/xxx.log"
+      # 日志文件归档格式
+      rotate_path: "./logs/xxx.log.%Y%M%D%H"
+    console:
+      on: false
+      color: false
+    # 日志输出到云中，怎么操作待定
+    #cloud:

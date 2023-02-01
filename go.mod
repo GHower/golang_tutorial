@@ -5,6 +5,7 @@ go 1.18
 require (
 	github.com/gin-gonic/gin v1.8.1
 	github.com/hpcloud/tail v1.0.0
+	github.com/nxadm/tail v1.4.8
 	github.com/panjf2000/ants/v2 v2.5.0
 	github.com/pkg/profile v1.6.0
 	github.com/sirupsen/logrus v1.9.0
